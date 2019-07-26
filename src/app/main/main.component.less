@@ -13,11 +13,6 @@
 .container {
     margin: @margin-mobile;
 }
-@media screen and (min-width: 600px) {
-    .container {
-        margin: @margin-tablet;
-    }
-}
 
 .fill-remaining-space {
   /* This fills the remaining space, by using flexbox.
@@ -45,4 +40,31 @@ h1.app-name {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
+}
+
+.mat-drawer-container {
+    background-color: #f5f5f5;
+}
+
+app-list-card {
+    display: inline-block;
+    width: 100%;
+}
+
+.is-mobile app-list-card {
+    width: 100%;
+}
+
+@media screen and (min-width: 980px) {
+    /* desktop */
+    app-list-card {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    /* tablet and desktop */
+    .container {
+        margin: @margin-tablet;
+    }
 }

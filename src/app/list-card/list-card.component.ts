@@ -9,6 +9,7 @@ import { MovieReaderService } from '../movie-reader.service';
 })
 export class ListCardComponent implements OnInit {
     @Input() API_ID: string;
+    @Input() index: number;
 
     private poster: string;
     private title: string;
@@ -23,6 +24,10 @@ export class ListCardComponent implements OnInit {
       this.poster = movie.poster;
       this.title = movie.title;
       this.overview = movie.overview;
+  }
+
+  private odd(): boolean {
+      return (this.index % 2 === 1);
   }
 
 }
